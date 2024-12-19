@@ -1,7 +1,6 @@
 "use client"
 import Counter from "@/components/Counter/Counter";
 import Image from "next/image";
-import { useEffect } from "react";
 import { builder } from "@builder.io/sdk";
 import { RenderBuilderContent } from "@/components/builder";
 
@@ -14,11 +13,11 @@ function resize(height: string) {
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
 export default async function Home() {
-  useEffect(() => {
+  //useEffect(() => {
     setTimeout(() => { resize('200px')}, 50);
     setTimeout(() => { resize('300px')}, 100);
     setTimeout(() => { resize('1300px')}, 150);
-  });
+  //});
   const content = await builder
   .get("store-page", {
     userAttributes: {
