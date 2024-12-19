@@ -4,24 +4,9 @@ import Image from "next/image";
 import { builder } from "@builder.io/sdk";
 import { RenderBuilderContent } from "@/components/builder";
 
-function resize(height: string) {
-  const e = document.getElementById('page');
-  if (e) {
-    e.style.height = height;
-  }
-}
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
-let x = 0;
 export default async function Home() {
-  //useEffect(() => {
-  if (x == 0) {
-    x = 1;
-    setTimeout(() => { resize('200px') }, 50);
-    setTimeout(() => { resize('300px') }, 100);
-    setTimeout(() => { resize('1300px') }, 150);
-  
-  //});
   const content = await builder
     .get("page", {
       userAttributes: {
@@ -30,9 +15,9 @@ export default async function Home() {
     })
     .toPromise();
   console.log('content', content);
-  }
-  return (
+  return (    
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center  p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+      <div id="page"></div>
       <RenderBuilderContent content={content} model="page"></RenderBuilderContent>
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         {/* <Image
