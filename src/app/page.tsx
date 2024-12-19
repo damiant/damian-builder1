@@ -2,7 +2,7 @@
 import Counter from "@/components/Counter/Counter";
 import Image from "next/image";
 import { useEffect } from "react";
-import { builder, BuilderComponent } from "@builder.io/sdk";
+import { builder } from "@builder.io/sdk";
 import { RenderBuilderContent } from "@/components/builder";
 
 function resize(height: string) {
