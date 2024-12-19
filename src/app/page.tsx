@@ -1,4 +1,5 @@
 "use client"
+import Counter from "@/components/Counter/Counter";
 import Image from "next/image";
 import { useEffect } from "react";
 
@@ -36,6 +37,8 @@ export default function Home() {
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>
+
+        <Counter></Counter>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
           <a
