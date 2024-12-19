@@ -2,6 +2,8 @@
 import Counter from "@/components/Counter/Counter";
 import Image from "next/image";
 import { useEffect } from "react";
+import { builder, BuilderComponent } from "@builder.io/sdk";
+import { RenderBuilderContent } from "@/components/builder";
 
 function resize(height: string) {
   const e = document.getElementById('page');
@@ -9,13 +11,21 @@ function resize(height: string) {
     e.style.height = height;
   }
 }
+builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
-export default function Home() {
+export default async function Home() {
   useEffect(() => {
     setTimeout(() => { resize('200px')}, 50);
     setTimeout(() => { resize('300px')}, 100);
     setTimeout(() => { resize('1300px')}, 150);
   });
+  const content = await builder
+  .get("store-page", {
+    userAttributes: {
+      urlPath: "/" ,
+    },
+  })
+  .toPromise();
   return (    
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
@@ -112,7 +122,12 @@ export default function Home() {
           />
           Go to nextjs.org →
         </a>
+
+
+        <RenderBuilderContent content={content} model="store-page"></RenderBuilderContent>
       </footer>
+
     </div>
+
   );
 }
