@@ -12,23 +12,28 @@ function resize(height: string) {
 }
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
+let x = 0;
 export default async function Home() {
   //useEffect(() => {
-    setTimeout(() => { resize('200px')}, 50);
-    setTimeout(() => { resize('300px')}, 100);
-    setTimeout(() => { resize('1300px')}, 150);
+  if (x == 0) {
+    x = 1;
+    setTimeout(() => { resize('200px') }, 50);
+    setTimeout(() => { resize('300px') }, 100);
+    setTimeout(() => { resize('1300px') }, 150);
+  }
   //});
   const content = await builder
-  .get("store-page", {
-    userAttributes: {
-      urlPath: "/" ,
-    },
-  })
-  .toPromise();
-  return (    
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    .get("page", {
+      userAttributes: {
+        urlPath: "/",
+      },
+    })
+    .toPromise();
+  return (
+    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center  p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+      <RenderBuilderContent content={content} model="page"></RenderBuilderContent>
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
+        {/* <Image
           className="dark:invert"
           src="/next.svg"
           alt="Next.js logo"
@@ -45,7 +50,7 @@ export default async function Home() {
             .
           </li>
           <li>Save and see your changes instantly.</li>
-        </ol>
+        </ol> */}
 
         <Counter></Counter>
 
@@ -123,7 +128,7 @@ export default async function Home() {
         </a>
 
 
-        <RenderBuilderContent content={content} model="store-page"></RenderBuilderContent>
+        
       </footer>
 
     </div>
