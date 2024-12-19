@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import Script from "next/script";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -30,10 +31,12 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <Script src="https://builder-resize-bug.netlify.app/sizer.js" />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 
-      >    <div id="page" className="page">
+      >
+        <div id="page" className="page">
           This is the page
         </div>
         <SpeedInsights />
