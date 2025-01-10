@@ -12,11 +12,12 @@ interface PageProps {
 
 export default async function Page(props: PageProps) {
   const builderModelName = "Home";
-
+  console.log(`IS_DEVELOPMENT is ${process.env.IS_DEVELOPMENT}, builderModelName is ${builderModelName}`);
   const content = await builder
     // Get the page content from Builder with the specified options
     .get(builderModelName, {
       userAttributes: {
+        cachebust: (process.env.IS_DEVELOPMENT === "true") ? true : false,
         // Use the page path specified in the URL to fetch the content
         urlPath: "/" + ((await props?.params)?.page?.join("/") || ""),
       },

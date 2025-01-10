@@ -5,8 +5,7 @@ import { RenderBuilderContent } from "@/components/builder";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
-export default async function Home() {
-  console.log(`IS_DEVELOPMENT is ${process.env.IS_DEVELOPMENT}`);
+export default async function Home() {  
   const content = await builder
     .get("page", {
       cachebust: (process.env.IS_DEVELOPMENT === "true") ? true : false,
