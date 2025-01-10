@@ -30,15 +30,10 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html lang="en">
-      <Script src="https://builder-resize-bug.netlify.app/sizer.js" />
+    <html lang="en">      
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-
       >
-        <div id="page" className="page">
-          This is the page
-        </div>
         <SpeedInsights />
         {children}
       </body>
