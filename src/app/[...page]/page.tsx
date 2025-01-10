@@ -12,7 +12,7 @@ interface PageProps {
 
 export default async function Page(props: PageProps) {
   const builderModelName = "page";
-  console.log(`IS_DEVELOPMENT is ${process.env.IS_DEVELOPMENT}, builderModelName is ${builderModelName}`);
+  console.log(`IS_DEVELOPMENT is ${process.env.IS_DEVELOPMENT}, builderModelName is ${builderModelName} url=${window.location.href}`);
   const content = await builder
     // Get the page content from Builder with the specified options
     .get(builderModelName, {
