@@ -1,5 +1,4 @@
 
-import Image from "next/image";
 import { builder } from "@builder.io/sdk";
 import { RenderBuilderContent } from "@/components/builder";
 
