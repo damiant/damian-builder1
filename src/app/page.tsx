@@ -7,7 +7,7 @@ builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 export default async function Home() {
   const content = await builder
     .get("page", {
-      cachebust: (process.env.IS_DEVELOPMENT === "true") ? true : false,
+      cachebust: true, //(process.env.IS_DEVELOPMENT === "true") ? true : false,
       userAttributes: {
         urlPath: "/",
       },
