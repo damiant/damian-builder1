@@ -5,9 +5,10 @@ import { RenderBuilderContent } from "@/components/builder";
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
 export default async function Home() {
+  const model = "page";
   const content = await builder
-    .get("page", {
-      cachebust: true, //(process.env.IS_DEVELOPMENT === "true") ? true : false,
+    .get(model, {
+      cachebust: (process.env.IS_DEVELOPMENT === "true"),
       userAttributes: {
         urlPath: "/",
       },
@@ -18,7 +19,7 @@ export default async function Home() {
 
     <main>
       <div className="page">
-        <RenderBuilderContent content={content} model="page"></RenderBuilderContent>
+        <RenderBuilderContent content={content} model={model}></RenderBuilderContent>
       </div>
       {process.env.IS_DEVELOPMENT === 'true' &&
         <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center  p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
