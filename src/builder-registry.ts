@@ -18,7 +18,7 @@ Builder.register('editor.settings', {
       { name: 'Primary', value: 'Poppins, -apple-system, Roboto, Helvetica, sans-serif' },
       { name: 'Alternative', value: 'Arial, Helvetica, sans-serif' }
     ],
-    fontSizing: [
+    fontSize: [
       { name: 'XLarge', value: 'var(--space-xlarge, 46px)' },
       { name: 'Large', value: 'var(--space-large, 24px)' },
       { name: 'Medium', value: 'var(--space-medium, 18px)' },
