@@ -5,6 +5,19 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #E6C744;
+  --accent: #FFF5BF;
+  --secondary: #C2C8DA;
+   
+  --size-xlarge: 46px;
+  --size-large: 24px;
+  --size-medium: 18px;
+  --size-small: 15px;
+
+  --space-xlarge: 30px;
+  --space-large: 20px;
+  --space-medium: 15px;
+  --space-small: 10px;
 }
 
 @media (prefers-color-scheme: dark) {
