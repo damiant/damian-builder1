@@ -19,10 +19,11 @@ Builder.register('editor.settings', {
       { name: 'Alternative', value: 'Arial, Helvetica, sans-serif' }
     ],
     fontSize: [
-      { name: 'XLarge', value: 'var(--space-xlarge, 46px)' },
-      { name: 'Large', value: 'var(--space-large, 24px)' },
-      { name: 'Medium', value: 'var(--space-medium, 18px)' },
-      { name: 'Small', value: 'var(--space-small, 15px)' },
+      { name: 'Largest', value: 'var(--size-xxlarge, 57px)' },
+      { name: 'Larger', value: 'var(--size-xlarge, 46px)' },
+      { name: 'Large', value: 'var(--size-large, 24px)' },
+      { name: 'Medium', value: 'var(--size-medium, 18px)' },
+      { name: 'Small', value: 'var(--size-small, 15px)' },
     ],
     spacing: [
       { name: 'XLarge', value: 'var(--space-xlarge, 46px)' },
