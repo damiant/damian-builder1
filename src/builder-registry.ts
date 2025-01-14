@@ -6,12 +6,16 @@ builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
 Builder.register('editor.settings', {
   styleStrictMode: false,
+  allowOverridingTokens: true, // This lets you edit values (eg set to 20px instead of choosing "large" etc)
+  designTokensOptional: false, // If true it lets you keep built in options available
+
   designTokens: {
     colors: [
       { name: 'Primary', value: "var(--primary, #E6C744)" },
       { name: 'Accent', value: "var(--accent, #FFF5BF)" },
       { name: 'Secondary', value: "var(--secondary, #C2C8DA)" },
       { name: 'Background', value: "var(--background, #ffffff)" },
+      { name: 'Background Light', value: "var(--background-light, #e8e8e8)" },
       { name: 'Foreground', value: "var(--foreground, #171717)" }
     ],
     fontFamily: [
