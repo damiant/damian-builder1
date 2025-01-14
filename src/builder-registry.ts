@@ -36,6 +36,13 @@ Builder.register('editor.settings', {
       { name: 'Small', value: 'var(--space-small, 15px)' },
       { name: 'None', value: 'var(--space-none, 0px)' },
     ],
+    gap: [
+      { name: 'XLarge', value: 'var(--space-xlarge, 46px)' },
+      { name: 'Large', value: 'var(--space-large, 24px)' },
+      { name: 'Medium', value: 'var(--space-medium, 18px)' },
+      { name: 'Small', value: 'var(--space-small, 15px)' },
+      { name: 'None', value: 'var(--space-none, 0px)' }
+    ],
     borderRadius: [
       { name: 'Medium', value: 'var(--border-radius-medium, 10px)' },
       { name: 'None', value: 'var(--space-none, 0px)' },
