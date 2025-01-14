@@ -21,6 +21,8 @@
   --space-medium: 15px;
   --space-small: 10px;
   --space-none: 0px;
+
+  --border-radius-medium: 10px;
 }
 
 @media (prefers-color-scheme: dark) {
