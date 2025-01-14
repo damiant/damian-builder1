@@ -34,6 +34,7 @@ Builder.register('editor.settings', {
       { name: 'Large', value: 'var(--space-large, 24px)' },
       { name: 'Medium', value: 'var(--space-medium, 18px)' },
       { name: 'Small', value: 'var(--space-small, 15px)' },
+      { name: 'None', value: 'var(--space-none, 0px)' },
     ]
   }
 });

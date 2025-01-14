@@ -20,6 +20,7 @@
   --space-large: 20px;
   --space-medium: 15px;
   --space-small: 10px;
+  --space-none: 0px;
 }
 
 @media (prefers-color-scheme: dark) {
