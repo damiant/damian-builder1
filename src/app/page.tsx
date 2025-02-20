@@ -8,7 +8,7 @@ export default async function Home() {
   const model = "page";
   const content = await builder
     .get(model, {
-      //cachebust: true,//(process.env.IS_DEVELOPMENT === "true"),
+      cachebust: true,//(process.env.IS_DEVELOPMENT === "true"),
       userAttributes: {
         urlPath: "/",
       },
