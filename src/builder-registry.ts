@@ -1,11 +1,11 @@
 "use client";
-import { Builder } from "@builder.io/react";
+import { builder, Builder } from "@builder.io/react";
 import Counter from "./components/Counter/Counter";
 import BynderImage, { registerBynderImage } from "./components/BynderImage";
 import { RegisterHero } from "./components/Hero";
 import { RegisterHeroContainer } from "./components/HeroContainer";
 
-//builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
+builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
 Builder.register("editor.settings", {
   styleStrictMode: false,
