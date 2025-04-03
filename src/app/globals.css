@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+ul{
+    list-style-type: disc;
+    margin-top: 1em;
+    margin-bottom: 1 em;
+    padding-left: 40px;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
