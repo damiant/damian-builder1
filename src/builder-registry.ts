@@ -1,7 +1,7 @@
 "use client";
 import { builder, Builder } from "@builder.io/react";
 import Counter from "./components/Counter/Counter";
-import BynderImage, { registerBynderImage } from "./components/BynderImage";
+//import BynderImage, { registerBynderImage } from "./components/BynderImage";
 import { RegisterHero } from "./components/Hero";
 import { RegisterHeroContainer } from "./components/HeroContainer";
 
@@ -66,25 +66,25 @@ Builder.registerComponent(Counter, {
 });
 RegisterHero();
 RegisterHeroContainer();
-registerBynderImage();
+// registerBynderImage();
 
-Builder.registerComponent(BynderImage, {
-  name: "BynderImage",
-  inputs: [
-    {
-      name: "bynderAsset",
-      type: "object",
-      hideFromUI: true,
-      meta: {
-        ts: "{ assets?: BaseAsset[]; additionalInfo?: AdditionalInfo; }",
-      },
-      required: true,
-    },
-    {
-      name: "imageFit",
-      type: "string",
-      enum: ["contain", "cover", "fill", "none"],
-      required: true,
-    },
-  ],
-});
+// Builder.registerComponent(BynderImage, {
+//   name: "BynderImage",
+//   inputs: [
+//     {
+//       name: "bynderAsset",
+//       type: "object",
+//       hideFromUI: true,
+//       meta: {
+//         ts: "{ assets?: BaseAsset[]; additionalInfo?: AdditionalInfo; }",
+//       },
+//       required: true,
+//     },
+//     {
+//       name: "imageFit",
+//       type: "string",
+//       enum: ["contain", "cover", "fill", "none"],
+//       required: true,
+//     },
+//   ],
+// });
