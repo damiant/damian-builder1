@@ -4,6 +4,7 @@ import Counter from "./components/Counter/Counter";
 //import BynderImage, { registerBynderImage } from "./components/BynderImage";
 import { RegisterHero } from "./components/Hero";
 import { RegisterHeroContainer } from "./components/HeroContainer";
+import { registerBynderImage } from "./components/BynderImage";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -66,7 +67,7 @@ Builder.registerComponent(Counter, {
 });
 RegisterHero();
 RegisterHeroContainer();
-// registerBynderImage();
+registerBynderImage();
 
 // Builder.registerComponent(BynderImage, {
 //   name: "BynderImage",
