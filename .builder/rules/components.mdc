@@ -1,0 +1,4 @@
+When creating a component the JSX needs to follow these rules:
+- Scaffold components using the tool `npx scafford-custom`
+- JSX must be using this validator command: `npx custom-jsx-validator [component].tsx`
+- A json file must be generated from the JSX using the command: `npx json-generator [component].tsx`

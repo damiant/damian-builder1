@@ -17,21 +17,24 @@ export default async function Page(props: PageProps) {
     // Get the page content from Builder with the specified options
     .get(model, {
       cachebust: process.env.IS_DEVELOPMENT === "true", // Cache busting in development mode
-      userAttributes: {        
+      userAttributes: {
         // Use the page path specified in the URL to fetch the content
         urlPath: "/" + ((await props?.params)?.page?.join("/") || ""),
       },
     })
     // Convert the result to a promise
     .toPromise();
+  builder.track("myEvent", { contentId: "c7849f818f6546dcbb347a8fbd82c9f9" });
+  builder.trackConversion(20);
 
-  
-    return (
-      <>
-        {/* Render the Builder page */}
-        
-        <RenderBuilderContent content={content} model={model}></RenderBuilderContent>
-      </>
-    );
+  return (
+    <>
+      {/* Render the Builder page */}
 
+      <RenderBuilderContent
+        content={content}
+        model={model}
+      ></RenderBuilderContent>
+    </>
+  );
 }

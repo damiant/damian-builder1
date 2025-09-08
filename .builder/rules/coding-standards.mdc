@@ -1,0 +1,2 @@
+Always run the `npm run lint` command and correct any linting errors.
+Create unit tests with Jest alongside the component code.

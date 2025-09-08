@@ -1,0 +1,4 @@
+When creating components you must follow this guide ./builder/rules/components.mdc
+When creating general code you must follow this guide ./builder/rules/coding-standards.mdc
+Always use components from the @mycompany/design-system-name design system
+Use utility css classes from ./common.css
