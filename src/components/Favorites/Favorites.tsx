@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 
 interface FavoriteItemProps {
   image: string;
@@ -10,10 +11,12 @@ interface FavoriteItemProps {
 const FavoriteItem: React.FC<FavoriteItemProps> = ({ image, title, buttonText }) => {
   return (
     <div className="inline-flex flex-col items-center gap-2 w-[203px] h-[184px]">
-      <img 
-        className="w-[202.931px] h-[155.581px] rounded-[10px]" 
-        src={image} 
+      <Image
+        className="w-[202.931px] h-[155.581px] rounded-[10px]"
+        src={image}
         alt={title}
+        width={203}
+        height={156}
       />
       <div className="flex items-center gap-24 w-full">
         <div className="flex flex-col items-start gap-0.5">
@@ -48,7 +51,7 @@ const Favorites: React.FC = () => {
       {/* Title */}
       <div className="absolute left-0 top-0 w-[134px] h-[17px]">
         <span className="text-black font-black text-[12.988px] leading-[16.234px] tracking-[0.52px]" style={{ fontFamily: 'Poppins, -apple-system, Roboto, Helvetica, sans-serif', fontSize: '13px' }}>
-          Young's Favourite
+          Young&apos;s Favourite
         </span>
       </div>
       
