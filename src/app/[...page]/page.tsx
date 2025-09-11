@@ -1,6 +1,7 @@
 import { builder } from "@builder.io/sdk";
 import { RenderBuilderContent } from "../../components/builder";
-
+import { headers } from "next/headers";
+import { commonOptions } from "@/common";
 
 // Builder Public API Key set in .env file
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
@@ -16,7 +17,7 @@ export default async function Page(props: PageProps) {
   const content = await builder
     // Get the page content from Builder with the specified options
     .get(model, {
-      cachebust: process.env.IS_DEVELOPMENT === "true", // Cache busting in development mode
+      ...commonOptions,
       userAttributes: {
         // Use the page path specified in the URL to fetch the content
         urlPath: "/" + ((await props?.params)?.page?.join("/") || ""),
@@ -24,8 +25,8 @@ export default async function Page(props: PageProps) {
     })
     // Convert the result to a promise
     .toPromise();
-  builder.track("myEvent", { contentId: "c7849f818f6546dcbb347a8fbd82c9f9" });
-  builder.trackConversion(20);
+  // builder.track("myEvent", { contentId: "c7849f818f6546dcbb347a8fbd82c9f9" });
+  // builder.trackConversion(20);
 
   return (
     <>

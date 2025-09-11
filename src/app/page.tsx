@@ -1,6 +1,6 @@
-
 import { builder } from "@builder.io/sdk";
 import { RenderBuilderContent } from "@/components/builder";
+import { commonOptions } from "@/common";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -8,7 +8,7 @@ export default async function Home() {
   const model = "page";
   const content = await builder
     .get(model, {
-      cachebust: true,//(process.env.IS_DEVELOPMENT === "true"),
+      ...commonOptions,
       userAttributes: {
         urlPath: "/",
       },
@@ -16,12 +16,14 @@ export default async function Home() {
     .toPromise();
 
   return (
-
     <main>
       <div className="page">
-        <RenderBuilderContent content={content} model={model}></RenderBuilderContent>
+        <RenderBuilderContent
+          content={content}
+          model={model}
+        ></RenderBuilderContent>
       </div>
-      {process.env.IS_DEVELOPMENT === 'true' &&
+      {process.env.IS_DEVELOPMENT === "true" && (
         <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center  p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
           <div className="flex gap-4 items-center flex-col sm:flex-row">
             <a
@@ -30,7 +32,6 @@ export default async function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              
               Blog
             </a>
             <a
@@ -43,7 +44,7 @@ export default async function Home() {
             </a>
           </div>
         </div>
-      }
+      )}
     </main>
   );
 }
