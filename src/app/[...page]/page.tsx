@@ -1,6 +1,5 @@
 import { builder } from "@builder.io/sdk";
 import { RenderBuilderContent } from "../../components/builder";
-import { headers } from "next/headers";
 import { commonOptions } from "@/common";
 
 // Builder Public API Key set in .env file
