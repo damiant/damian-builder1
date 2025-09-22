@@ -1,7 +1,7 @@
 import { GetContentOptions } from "@builder.io/sdk";
 
 export const commonOptions: GetContentOptions = {
-  cacheSeconds: 2,
+  //cacheSeconds: 2,
   //staleCacheSeconds: 0,
   fetchOptions: {
     //cache: "no-store", // Turn off Nextjs fetch caching https://nextjs.org/docs/app/guides/caching#opting-out-1
